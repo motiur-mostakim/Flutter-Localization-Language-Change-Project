@@ -1,10 +1,11 @@
 // TabBar ar maddhome change korte chaile ai Part
 
+
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
-import 'package:local_language_change_apps/localizations/locals.dart';
 
 import '../language_selector.dart';
+import '../localizations/locals.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,13 +16,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late FlutterLocalization _flutterLocalization;
-  late String _currenLocal;
+  late String _currentLocale;
 
   @override
   void initState() {
     super.initState();
     _flutterLocalization = FlutterLocalization.instance;
-    _currenLocal = _flutterLocalization.currentLocale!.languageCode;
+    _currentLocale = _flutterLocalization.currentLocale!.languageCode;
   }
 
   void _onLanguageChange(String languageCode) {
@@ -32,19 +33,24 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(LocalData.title.getString(context)),
+        title: Text( getLocalizedText("name"),),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              context.formatString(LocalData.body, ["MRM"]),
-              style: const TextStyle(fontSize: 22),
+              getLocalizedText("college"),
+              style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 20),
             Text(
-              _currenLocal == "bn" ? "ভাষা: বাংলা" : "Language: English",
+              getLocalizedText("name"),
+              style: const TextStyle(fontSize: 18),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              getLocalizedText("father_name"),
               style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 10),
@@ -64,10 +70,31 @@ class _HomePageState extends State<HomePage> {
       return;
     }
     setState(() {
-      _currenLocal = value;
+      _currentLocale = value;
     });
   }
+
+  // Define getLocalizedText method
+  String getLocalizedText(String key) {
+    final locale = _flutterLocalization.currentLocale?.languageCode ?? 'en';
+    final localizedData = locale == 'bn' ? LocalData.BN : LocalData.EN;
+
+    // Check if the data exists and extract the value for the given key
+    if (localizedData.containsKey(LocalData.body) &&
+        localizedData[LocalData.body] is Map<String, dynamic>) {
+      final bodyData = localizedData[LocalData.body] as Map<String, dynamic>;
+      return bodyData[key] ?? key; // Return the value or the key if not found
+    }if(localizedData.containsKey(LocalData.title) && localizedData[LocalData.title] is Map<String,dynamic>){
+      final titleData = localizedData[LocalData.title] as Map<String,dynamic>;
+      return titleData[key] ?? key;
+    }
+    return key; // Default to the key if the data is not found
+  }
 }
+
+
+
+
 
 
 

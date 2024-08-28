@@ -26,10 +26,10 @@ class _LanguageSelectorState extends State<LanguageSelector> {
             borderRadius: BorderRadius.circular(20),
           ),
           child: Padding(
-            padding: EdgeInsets.only(top: 3),
+            padding: const EdgeInsets.only(top: 3),
             child: TabBar(
               indicatorSize: TabBarIndicatorSize.label,
-              indicatorPadding: EdgeInsets.all(3),
+              indicatorPadding: const EdgeInsets.all(3),
               splashBorderRadius: BorderRadius.circular(20),
               overlayColor: const MaterialStatePropertyAll(Colors.white),
               indicatorColor: const Color(0xFFF0F0F0),
@@ -41,10 +41,10 @@ class _LanguageSelectorState extends State<LanguageSelector> {
                 String selectedLanguage = index == 0 ? "en" : "bn";
                 widget.onLanguageChange(selectedLanguage);
               },
-              labelPadding: EdgeInsets.symmetric(horizontal: 05),
+              labelPadding: const EdgeInsets.symmetric(horizontal: 05),
               tabs: [
                 selectIndex != 0
-                    ? Center(
+                    ? const Center(
                   child: Text('English',
                       style: TextStyle(
                           color: Colors.black,
@@ -58,7 +58,7 @@ class _LanguageSelectorState extends State<LanguageSelector> {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(13),
                       color: Colors.yellow),
-                  child: Center(
+                  child: const Center(
                     child: Text('English',
                         style: TextStyle(
                             color: Colors.black,
@@ -67,7 +67,7 @@ class _LanguageSelectorState extends State<LanguageSelector> {
                   ),
                 ),
                 selectIndex != 1
-                    ? Center(
+                    ? const Center(
                   child: Text('বাংলা',
                       style: TextStyle(
                           color: Colors.black,
@@ -82,7 +82,7 @@ class _LanguageSelectorState extends State<LanguageSelector> {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(13),
                       color: Colors.yellow),
-                  child: Center(
+                  child: const Center(
                     child: Text('বাংলা',
                         style: TextStyle(
                             color: Colors.black,

@@ -1,0 +1,33 @@
+{
+  "home": {
+    "subscribe_save": "Subscribe & Save",
+    "suggested_products": "Suggested Products",
+    "suggested_offers": "Suggested Offers",
+    "suggested_articles": "Suggested Articles",
+    "suggested_videos": "Suggested Videos",
+    "exit_message": "You have {{}} items in your cart.",
+    "exit_message_addition": "Complete your order to receive reward {{}}",
+    "exit_title": "Do you really want to exit?",
+    "exit": "Exit",
+    "checkout": "Checkout",
+    "keep_exploring": "Keep Exploring",
+    "brands": "Brands",
+    "services": "Suggested Services",
+    "set_location": "For better personalized experience, please enter your location information."
+  },
+  "toast_text": {
+    "added_to_cart": "Your Product has been successfully added to the cart",
+    "cart_item_must_not_be_empty": "Cart items must not be empty",
+    "coupon_success": "Coupon applied successfully",
+    "coupon_not_exist": "Coupon doesn't exist"
+  },
+  "you_have_cart_items": "You have {{}} pending items on cart list",
+  "proceed": "Proceed",
+  "orders": "Orders",
+  "faq": "FAQ",
+  "order_details": "Order Details",
+  "welcome_alert_title": "WELCOME!",
+  "welcome_alert_body": "Enjoy your journey with ToguMogu.",
+  "welcome_alert_corporate": "You are a verified corporate user.",
+  "code": "en"
+}
